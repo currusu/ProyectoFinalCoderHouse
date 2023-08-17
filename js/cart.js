@@ -16,24 +16,27 @@ productoContenedor.addEventListener('click', (e) => {
 })
 //Esta función hace referencia a que si el producto NO está repetido (!estaRepetido)lo encuentre con la función de órden superior find y haga un push (mostrar)
 //La función de else es por si el prodcuto está repetido que solo aumente la cantidad
+//También se agregó un fetch que se encargá de buscar los datos y transformarlos en el formato legible json y después los muestra.
+//Después de traer los datos los buscamos por id y los mostramos con push en el carrito
 
 const validarProductoEnCarrito = (id) => {
-    const estaRepetido = carrito.some(producto => producto.id == id)
-    if (!estaRepetido) {
-        const producto = productos.find(producto => producto.id == id)
-        carrito.push(producto)
-        console.log(carrito)
-        pintarProductoCarrito(producto)
-        actualizarTotalesCarrito(carrito)
-    } else {
-
-        const producto = carrito.find(producto => producto.id)
-        producto.cantidad++
-        pintarCarrito(carrito)
-        actualizarTotalesCarrito(carrito)
-    }
-
-}
+	const estaRepetido = carrito.some((producto) => producto.id == id);
+	if (!estaRepetido) {
+		fetch("./data/stock.json")
+			.then((response) => response.json())
+			.then((productos) => {
+				const producto = productos.find((producto) => producto.id == id);
+				carrito.push(producto);
+				pintarProductoCarrito(producto);
+				actualizarTotalesCarrito(carrito);
+			});
+	} else {
+		const producto = carrito.find((producto) => producto.id);
+		producto.cantidad++;
+		pintarCarrito(carrito);
+		actualizarTotalesCarrito(carrito);
+	}
+};
 
 //Esta función hace que cada vez que el usuario apoya el mouse arriba del botón carrito de cada producto este lo marque.
 //El inner HtMl hace que está acción sea renderizada en la vista de la página
@@ -120,6 +123,9 @@ const obtenerCarritoStorage = () => {
     const carritoStorage = JSON.parse(localStorage.getItem('carrito'))
     return carritoStorage
 }
+
+
+
 
 //Esta función guarda todo lo anterior
 
