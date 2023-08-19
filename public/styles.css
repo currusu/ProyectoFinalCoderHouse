@@ -19,9 +19,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 10%;
-    /* box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px; */
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-    /* margin-bottom: 20px; */
+
 }
 
 h1 {
@@ -45,7 +43,7 @@ h1 {
 #cesta-carrito:hover {
     cursor: pointer;
     color: white;
-    background-color: rgb(225, 76, 65);
+    background-color: rgb(225, 65, 65);
 }
 
 #cesta-carrito:focus {
@@ -53,21 +51,25 @@ h1 {
 }
 
 #producto-contenedor {
+
     display: grid;
     gap: 1rem;
-    max-width: 60rem;
-    margin: 60px auto;
+    max-width: 55rem;
+    margin: 55px auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+
+
 
 p {
     line-height: 1.8;
 }
 
 .card {
-    max-width: 30%;
+    max-width: 40%;
     padding: 10px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
@@ -75,7 +77,7 @@ p {
 
 select {
     display: inline;
-    text-align: center;
+    text-align: left;
     border: 1px solid lightskyblue;
 }
 
@@ -142,7 +144,7 @@ select {
 }
 
 .card .card-image .card-title {
-    color: rgb(225, 76, 65);
+    color: rgb(225, 65, 65);
     position: unset
 }
 
@@ -157,7 +159,7 @@ select {
 }
 
 .productoEnCarrito:hover {
-    border-left: 5px solid rgb(225, 76, 65);
+    border-left: 5px solid rgb(225, 65, 65);
 }
 
 .boton-eliminar {
@@ -174,3 +176,4 @@ select {
 .boton-eliminar:focus {
     outline: none;
 }
+
