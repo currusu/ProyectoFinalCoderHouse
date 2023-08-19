@@ -5,7 +5,11 @@ const modalCarrito = document.querySelector('.modal-carrito');
 const compraExitosa = document.getElementById("compraExitosa")
 const btnVaciarCarrito = document.getElementById('btn-vaciar-carrito');
 
+
 //Estas funciones son las que hacen que nuestros botones funcionen y además se muestran en el DOM
+
+
+
 abrirCarrito.addEventListener("click", () => {
     modalContenedor.classList.toggle("modal-active")
 
