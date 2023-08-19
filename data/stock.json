@@ -63,8 +63,8 @@
 		"id": 7,
 		"nombre": "Pavlova",
 		"descripcion": "Riquisimo postre con crema fresca, frutos rojos y merengue crocante",
-		"precio $": 6000,
-		"peso": "2kgs",
+		"precio": 600,
+		"peso": "300grs",
 		"imagen": "./images/Pavlova.jpg",
 		"cantidad": 1
 	},
