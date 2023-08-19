@@ -31,7 +31,7 @@ const validarProductoEnCarrito = (id) => {
 				actualizarTotalesCarrito(carrito);
 			});
 	} else {
-		const producto = carrito.find((producto) => producto.id);
+		const producto = carrito.find((producto) => producto.id == id);
 		producto.cantidad++;
 		pintarCarrito(carrito);
 		actualizarTotalesCarrito(carrito);
@@ -94,12 +94,15 @@ const eliminarProductoCarrito = (id) => {
 //Esta función define la cantidad y multiplica el precio según la cantidad
 
 const actualizarTotalesCarrito = (carrito) => {
-    const totalCantidad = carrito.reduce((acc, item) => acc + item.cantidad, 0)
-    const totalCompra = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0)
+    const totalCompra = carrito.reduce((acc, item) => acc + (item.cantidad * item.precio), 0);
+    const totalCantidad = carrito.reduce((acc, item) => acc + (item.cantidad), 0);
 
-    pintarTotalesCarrito(totalCantidad, totalCompra)
-    guardarCarritoStorage(carrito)
-}
+    pintarTotalesCarrito(totalCantidad, totalCompra);
+    guardarCarritoStorage(carrito);
+};
+
+
+
 //Esta función muestra en el DOM la cantidad de productos y el precio total. Inner text lo muestra en la vista
 
 const pintarTotalesCarrito = (totalCantidad, totalCompra) => {
@@ -109,6 +112,8 @@ const pintarTotalesCarrito = (totalCantidad, totalCompra) => {
     contadorCarrito.innerText = totalCantidad
     precioTotal.innerText = totalCompra
 }
+
+
 
 //Esta función guarda un set (clave unica) de carrito y después lo guarda en el contenedor local del usuario. Este solo recibe cadenas de texto entonces gracias a JSON lo utilizamos. Esto sirve para que la información de las acciones que realiza el usuario se guarde de forma permanente y este no la pierda en caso que salga de la página y entre en otro momento. Es importnate NO guardar información confidencial en local storage ya que esta solo se elimina de forma manual.
 

@@ -3,6 +3,7 @@ const abrirCarrito = document.getElementById("cesta-carrito")
 const cerrarCarrito = document.getElementById("btn-cerrar-carrito")
 const modalCarrito = document.querySelector('.modal-carrito');
 const compraExitosa = document.getElementById("compraExitosa")
+const btnVaciarCarrito = document.getElementById('btn-vaciar-carrito');
 
 //Estas funciones son las que hacen que nuestros botones funcionen y además se muestran en el DOM
 abrirCarrito.addEventListener("click", () => {
@@ -51,4 +52,30 @@ const mostrarMensajeCompraExitosa = () => {
 
 }
 
+//Esta función crea el evento para vaciar carrito
 
+btnVaciarCarrito.addEventListener('click', () => {
+    return new Promise ((resolve)=>{
+        setTimeout(()=>{
+            swal.fire({
+                title: "¿Está seguro de que quiere vaciar el carrito?",
+                icon: "warning",
+                buttons: ["Cancelar", "Vaciar"],
+                dangerMode: true,
+              }).then((willVaciar) => {
+                if (willVaciar.isConfirmed) {
+                  // Vaciar el carrito y actualizar la interfaz
+                  carrito = [];
+                  pintarCarrito(carrito);
+                  actualizarTotalesCarrito(carrito);
+                  localStorage.removeItem('carrito'); // Limpiar el almacenamiento local también
+                }
+              });
+                 resolve();
+            },2000);
+
+            });
+    });
+    
+  
+  

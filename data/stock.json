@@ -21,7 +21,7 @@
 
 	{
 		"id": 3,
-		"nombre": "Cuadrados de chocolate",
+		"nombre":      "Cuadrados de chocolate",
 		"descripcion": "Un clásico que no puede faltar a la hora del café",
 		"precio": 500,
 		"peso": "200grs",
@@ -63,7 +63,7 @@
 		"id": 7,
 		"nombre": "Pavlova",
 		"descripcion": "Riquisimo postre con crema fresca, frutos rojos y merengue crocante",
-		"precio": 6000,
+		"precio $": 6000,
 		"peso": "2kgs",
 		"imagen": "./images/Pavlova.jpg",
 		"cantidad": 1

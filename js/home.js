@@ -11,7 +11,8 @@ const pintarProductos = (data) => {
 </div>
 <div class="card-content">
 <p>${producto.descripcion}</p>
-<p>${producto.precio}</p>
+<p> Peso:${producto.peso}</p>
+<p>Precio por unidad: $ ${producto.precio}</p>
 
 </div>
 
