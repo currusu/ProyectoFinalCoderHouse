@@ -34,28 +34,21 @@ compraExitosa.addEventListener("click", () => {
     if (carrito.length > 0) {
         mostrarMensajeCompraExitosa()
             .then(() => {
-                Swal.fire({
-                    icon: 'success',
-                    title: '¡Bien Hecho!',
-                    text: 'Su compra ha sido realizada con éxito'
-                });
             })
             .catch((error) => {
                 // Manejar errores que ocurran en la promesa
             });
     } else if (carrito.length === 0) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Debes cargar al menos un producto en el carrito para realizar la compra.',
-        });
+        mostrarMensajeCompraNoExitosa()
+        .then(()=>{
+        })
     }
 });
 
 
 //Esta función asincrónica está conectada con el evento de compraExitosa porque maneja el tiempo de espera y a la vez muestra un mensaje de éxito
-const mostrarMensajeCompraExitosa = () => {
-    return new Promise((resolve) => {
+const mostrarMensajeCompraExitosa = async () => {
+    await new Promise((resolve) => {
         setTimeout(() => {
             Swal.fire({
                 icon: 'success',
@@ -68,8 +61,8 @@ const mostrarMensajeCompraExitosa = () => {
 
 }
 
-const mostrarMensajeCompraNoExitosa = () => {
-    return new Promise((resolve) => {
+const mostrarMensajeCompraNoExitosa = async () => {
+    await new Promise((resolve) => {
         setTimeout(() => {
             Swal.fire({
                 icon: 'error',

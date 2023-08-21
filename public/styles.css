@@ -3,11 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Roboto', sans-serif;
 
+
 }
+
+
+
+
 
 .home{
 
@@ -49,16 +53,18 @@ header {
 }
 
 h1 {
-    color: rgb(225, 76, 65);
+    color: rgb(65, 89, 225);
     text-transform: uppercase;
     font-weight: 500px;
     font-size: 30px;
     margin: 0;
+    font-style:oblique;
 }
+
 
 #cesta-carrito {
     border: none;
-    color: rgb(225, 76, 65);
+    color: rgb(65, 89, 225);
     font-size: 30px;
     background-color: white;
     border-radius: 50%;
@@ -69,7 +75,7 @@ h1 {
 #cesta-carrito:hover {
     cursor: pointer;
     color: white;
-    background-color: rgb(225, 65, 65);
+    background-color: rgb(65, 89,225);
 }
 
 #cesta-carrito:focus {
@@ -79,7 +85,8 @@ h1 {
 
 
 #producto-contenedor {
-
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
     display: grid;
     gap: 1rem;
     max-width: 55rem;
@@ -140,12 +147,33 @@ select {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
+/* para centar y poner negrita el precio total */
+.precioProducto{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Para que los botones queden uno debajo del otro */
+.botones{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Para centrarlos y darles un mismo tamaño */
+.botones .btn{
+    width: 250px;
+    margin: 3px auto;
+}
+
+
 .modal-active .modal-carrito {
     margin-top: 0;
 }
 
 .modal-carrito h3 {
-    color: rgb(225, 76, 65);
+    color: rgb(225, 65, 65);
     padding-bottom: 5px;
 }
 
@@ -154,7 +182,7 @@ select {
     top: 15px;
     right: 15px;
     font-size: 20px;
-    color: rgb(225, 76, 65) !important;
+    color: rgb(225, 65, 65) !important;
     border: none;
     background-color: white;
 }
@@ -167,12 +195,12 @@ select {
     outline: none;
 }
 
-.modal-carrito .producto-precio {
+/*.modal-carrito .producto-precio {
     padding-top: 10px;
-}
+}*/
 
 .card .card-image .card-title {
-    color: rgb(225, 65, 65);
+    color: rgb(65, 89, 225);
     position: unset
 }
 
@@ -186,8 +214,18 @@ select {
     justify-content: space-between;
 }
 
+/* Le doy un ancho minimo para que no se baje a otro renglon el importe y la cantidad  */
+.productoEnCarrito p{
+    min-width: 80px;
+}
+
+/* Para centrar el importe y que no se pegue al nombre del producto */
+.productoEnCarrito p:nth-child(2){
+    text-align: center;
+}
+
 .productoEnCarrito:hover {
-    border-left: 5px solid rgb(225, 65, 65);
+    border-left: 5px solid rgb(65, 89, 225);
 }
 
 .boton-eliminar {
@@ -203,5 +241,116 @@ select {
 
 .boton-eliminar:focus {
     outline: none;
+
+    /*RESPONSIVE*/
+}
+@media (min-width: 400px){
+
+    /* para el el nombre el producto no supere los 150px y quede ordenado en cada columna */
+    .productoEnCarrito p:nth-child(1){
+        max-width: 150px;
+    }
+}
+@media (min-width: 768px){
+
+    /* Anulo el max-width y le doy un ancho de 250px */
+    .productoEnCarrito p:nth-child(1){
+        max-width: none;
+        width: 230px;
+    }
+/* Para que los botones queden uno al lado del otro */
+.botones{
+    flex-direction: row;
+
+}
+/* Para darles un mismo tamaño y un espacio entre los botones */
+    .botones .btn{
+        width: 200px;
+        margin: 5px;
+    }
+
 }
 
+@media (min-width:1920px) {
+    #list2 {
+      padding-left: 0% !important;
+    }
+  
+    #footerFinal {
+      font-size: 4px !important;
+    }
+  }
+  
+  @media (min-width:1440px) {
+    #tittleList {
+      font-size: 15px;
+    }
+  
+    #cardNameWorkSpace {
+      font-size: 20px;
+    }
+  
+    .card {
+      font-size: 13px;
+    }
+  
+    #list2 {
+      padding: 0.5% !important;
+    }
+  }
+  
+  @media (max-width:1280px) {
+  
+    /*Controlo el tamaño de las cards*/
+    #list2 {
+      font-size: 15px;
+    }
+  
+    #tittleList {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width:1025px) and (max-width:1280px) {
+    #list2 {
+      font-size: 10px;
+    }
+  
+    #tittleList {
+      font-size: 10px;
+    }
+  
+    #cardNameWorkSpace {
+      display: none;
+    }
+  }
+
+
+  
+  @media (min-width:981px) and (max-width:1024px) {}
+  
+  @media (max-width:1024px) {}
+  
+  @media (min-width:768px) and (max-width:980px) {}
+  
+  @media (max-width:980px) {}
+  
+  @media (max-width:800px) and (orientation:landscape) {}
+  
+  @media (max-width:800px) {}
+  
+  @media (max-width:767px) {}
+  
+  @media (max-width:640px) {}
+  
+  @media (max-width:576px) {}
+  
+  @media (max-width:375px) {}
+  
+  @media (max-width:360px) {}
+  
+  @media (max-width:320px) {}
+  
+  @media (max-width: 1024px) {}
+
+  
