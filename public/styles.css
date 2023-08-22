@@ -3,15 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
 
-
 }
-
-
-
-
 
 .home{
 
@@ -53,18 +49,16 @@ header {
 }
 
 h1 {
-    color: rgb(65, 89, 225);
+    color: rgb(225, 76, 65);
     text-transform: uppercase;
     font-weight: 500px;
     font-size: 30px;
     margin: 0;
-    font-style:oblique;
 }
-
 
 #cesta-carrito {
     border: none;
-    color: rgb(65, 89, 225);
+    color: rgb(225, 76, 65);
     font-size: 30px;
     background-color: white;
     border-radius: 50%;
@@ -75,18 +69,15 @@ h1 {
 #cesta-carrito:hover {
     cursor: pointer;
     color: white;
-    background-color: rgb(65, 89,225);
+    background-color: rgb(225, 65, 65);
 }
 
 #cesta-carrito:focus {
     outline: none;
 }
 
-
-
 #producto-contenedor {
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
+
     display: grid;
     gap: 1rem;
     max-width: 55rem;
@@ -95,9 +86,6 @@ h1 {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
-
-
 
 p {
     line-height: 1.8;
@@ -126,7 +114,6 @@ select {
     align-items: center;
     transition: all .5s;
     opacity: 0;
-    visibility: hidden;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -139,7 +126,7 @@ select {
 .modal-carrito {
     position: relative;
     background-color: white;
-    min-width: 500px;
+    /* min-width: 500px; Esta linea es la que no permite que el modal se achique al tamaño de la pantalla */
     padding: 20px;
     margin-top: -100%;
     transition: all .5s;
@@ -161,19 +148,18 @@ select {
     flex-direction: column;
 }
 
-/* Para centrarlos y darles un mismo tamaño */
+/* Paracentrarlos y darles un mismo tamaño */
 .botones .btn{
     width: 250px;
     margin: 3px auto;
 }
-
 
 .modal-active .modal-carrito {
     margin-top: 0;
 }
 
 .modal-carrito h3 {
-    color: rgb(225, 65, 65);
+    color: rgb(225, 76, 65);
     padding-bottom: 5px;
 }
 
@@ -182,7 +168,7 @@ select {
     top: 15px;
     right: 15px;
     font-size: 20px;
-    color: rgb(225, 65, 65) !important;
+    color: rgb(225, 76, 65) !important;
     border: none;
     background-color: white;
 }
@@ -195,12 +181,12 @@ select {
     outline: none;
 }
 
-/*.modal-carrito .producto-precio {
+/* .modal-carrito .producto-precio {
     padding-top: 10px;
-}*/
+} */
 
 .card .card-image .card-title {
-    color: rgb(65, 89, 225);
+    color: rgb(225, 65, 65);
     position: unset
 }
 
@@ -225,7 +211,7 @@ select {
 }
 
 .productoEnCarrito:hover {
-    border-left: 5px solid rgb(65, 89, 225);
+    border-left: 5px solid rgb(225, 65, 65);
 }
 
 .boton-eliminar {
@@ -241,9 +227,9 @@ select {
 
 .boton-eliminar:focus {
     outline: none;
-
-    /*RESPONSIVE*/
 }
+
+
 @media (min-width: 400px){
 
     /* para el el nombre el producto no supere los 150px y quede ordenado en cada columna */
@@ -251,6 +237,7 @@ select {
         max-width: 150px;
     }
 }
+
 @media (min-width: 768px){
 
     /* Anulo el max-width y le doy un ancho de 250px */
@@ -258,71 +245,15 @@ select {
         max-width: none;
         width: 230px;
     }
-/* Para que los botones queden uno al lado del otro */
-.botones{
-    flex-direction: row;
 
-}
-/* Para darles un mismo tamaño y un espacio entre los botones */
+    /* Para que los botones queden uno al lado del otro */
+    .botones{
+        flex-direction: row;
+    }
+
+    /* Para darles un mismo tamaño y un espacio entre los botones */
     .botones .btn{
         width: 200px;
         margin: 5px;
     }
-
 }
-
-@media (min-width:1920px) {
-    #list2 {
-      padding-left: 0% !important;
-    }
-  
-    #footerFinal {
-      font-size: 4px !important;
-    }
-  }
-  
-  @media (min-width:1440px) {
-    #tittleList {
-      font-size: 15px;
-    }
-  
-    #cardNameWorkSpace {
-      font-size: 20px;
-    }
-  
-    .card {
-      font-size: 13px;
-    }
-  
-    #list2 {
-      padding: 0.5% !important;
-    }
-  }
-  
-  @media (max-width:1280px) {
-  
-    /*Controlo el tamaño de las cards*/
-    #list2 {
-      font-size: 15px;
-    }
-  
-    #tittleList {
-      font-size: 15px;
-    }
-  }
-  
-  @media (min-width:1025px) and (max-width:1280px) {
-    #list2 {
-      font-size: 10px;
-    }
-  
-    #tittleList {
-      font-size: 10px;
-    }
-  
-    #cardNameWorkSpace {
-      display: none;
-    }
-  }
-
-
