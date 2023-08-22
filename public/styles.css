@@ -326,31 +326,3 @@ select {
   }
 
 
-  
-  @media (min-width:981px) and (max-width:1024px) {}
-  
-  @media (max-width:1024px) {}
-  
-  @media (min-width:768px) and (max-width:980px) {}
-  
-  @media (max-width:980px) {}
-  
-  @media (max-width:800px) and (orientation:landscape) {}
-  
-  @media (max-width:800px) {}
-  
-  @media (max-width:767px) {}
-  
-  @media (max-width:640px) {}
-  
-  @media (max-width:576px) {}
-  
-  @media (max-width:375px) {}
-  
-  @media (max-width:360px) {}
-  
-  @media (max-width:320px) {}
-  
-  @media (max-width: 1024px) {}
-
-  
