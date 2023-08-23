@@ -104,7 +104,7 @@ p {
 }
 
 .card {
-    max-width: 40%;
+    max-width: 100%;
     padding: 10px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
