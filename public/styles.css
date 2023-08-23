@@ -139,7 +139,7 @@ select {
 .modal-carrito {
     position: relative;
     background-color: white;
-    min-width: 500px;
+   /* min-width: 500px; Sin esta línea el tamaño de la pantalla se achica*/
     padding: 20px;
     margin-top: -100%;
     transition: all .5s;
@@ -271,86 +271,3 @@ select {
 
 }
 
-@media (min-width:1920px) {
-    #list2 {
-      padding-left: 0% !important;
-    }
-  
-    #footerFinal {
-      font-size: 4px !important;
-    }
-  }
-  
-  @media (min-width:1440px) {
-    #tittleList {
-      font-size: 15px;
-    }
-  
-    #cardNameWorkSpace {
-      font-size: 20px;
-    }
-  
-    .card {
-      font-size: 13px;
-    }
-  
-    #list2 {
-      padding: 0.5% !important;
-    }
-  }
-  
-  @media (max-width:1280px) {
-  
-    /*Controlo el tamaño de las cards*/
-    #list2 {
-      font-size: 15px;
-    }
-  
-    #tittleList {
-      font-size: 15px;
-    }
-  }
-  
-  @media (min-width:1025px) and (max-width:1280px) {
-    #list2 {
-      font-size: 10px;
-    }
-  
-    #tittleList {
-      font-size: 10px;
-    }
-  
-    #cardNameWorkSpace {
-      display: none;
-    }
-  }
-
-
-  
-  @media (min-width:981px) and (max-width:1024px) {}
-  
-  @media (max-width:1024px) {}
-  
-  @media (min-width:768px) and (max-width:980px) {}
-  
-  @media (max-width:980px) {}
-  
-  @media (max-width:800px) and (orientation:landscape) {}
-  
-  @media (max-width:800px) {}
-  
-  @media (max-width:767px) {}
-  
-  @media (max-width:640px) {}
-  
-  @media (max-width:576px) {}
-  
-  @media (max-width:375px) {}
-  
-  @media (max-width:360px) {}
-  
-  @media (max-width:320px) {}
-  
-  @media (max-width: 1024px) {}
-
-  
